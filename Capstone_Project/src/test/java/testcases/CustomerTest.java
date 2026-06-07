@@ -24,7 +24,8 @@ public class CustomerTest extends BaseTest {
         cp.enterState("West Bengal");
         cp.enterPin("700001");
         cp.enterMobile("9876543210");
-        cp.enterEmail("akash1209@gmail.com");
+        int random = (int)(Math.random() * 10000);
+        cp.enterEmail("akash" + random + "@gmail.com");
         cp.enterPassword("abc123");
         cp.clickSubmit();
 
