@@ -16,7 +16,7 @@ public class AccountTest extends BaseTest {
         AccountPage ap = new AccountPage(driver);
 
         ap.clickNewAccount();
-        ap.enterCustomerId("14623");
+        ap.enterCustomerId("72984");
         ap.selectAccountType("Savings");
         ap.enterInitialDeposit("5000");
         ap.clickSubmit();

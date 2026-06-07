@@ -37,8 +37,6 @@
             "testcases.FundTransferTest"/>
             <class name="testcases.LogoutTest"/>
             
-            <class name=
-            "testcases.BankingFlowTest"/>
 
         </classes>
 

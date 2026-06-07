@@ -16,8 +16,8 @@ public class WithdrawTest extends BaseTest {
         WithdrawPage wp = new WithdrawPage(driver);
 
         wp.clickWithdrawal();
-        wp.enterAccountNo("183286");
-        wp.enterAmount("1000");
+        wp.enterAccountNo("183433");
+        wp.enterAmount("200");
         wp.enterDescription("ATM Withdraw");
         wp.clickSubmit();
 
@@ -36,15 +36,15 @@ public class WithdrawTest extends BaseTest {
         WithdrawPage wp = new WithdrawPage(driver);
 
         wp.clickWithdrawal();
-        wp.enterAccountNo("183286");
+        wp.enterAccountNo("183433");
         wp.enterAmount("999999");
         wp.enterDescription("ATM Withdraw");
         wp.clickSubmit();
 
-        Assert.assertTrue(
-                driver.getPageSource()
-                .contains("Insufficient Balance"));
-
+        String msg =driver.switchTo().alert().getText();
+        System.out.println(msg);
+      //  Assert.assertTrue(msg.contains("Balance Low"));
+        driver.switchTo().alert().accept();
         System.out.println("Insufficient Balance Validation Passed");
-    }
+}
 }

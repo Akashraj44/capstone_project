@@ -19,7 +19,7 @@ public class FundTransferTest extends BaseTest {
         fp.clickFundTransfer();
         fp.enterPayerAccount("183433");
         fp.enterPayeeAccount("183286");
-        fp.enterAmount("1000");
+        fp.enterAmount("500");
         fp.enterDescription("Fund Transfer");
         fp.clickSubmit();
 
