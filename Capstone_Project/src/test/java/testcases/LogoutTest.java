@@ -11,8 +11,7 @@ public class LogoutTest extends BaseTest {
 
     @Test
 
-    public void validLogout()
-            throws Exception {
+    public void validLogout() throws Exception {
 
         login();
 
@@ -28,7 +27,6 @@ public class LogoutTest extends BaseTest {
 
         alert.accept();
 
-        System.out.println(
-        "Logout Successful");
+        System.out.println("Logout Successful");
     }
 }
