@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Guru99 Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="listeners.ListenerClass"/>
+    <listener class-name="listeners.ExtentListener"/>
+  </listeners>
+  <test thread-count="5" name="Guru99 Tests(failed)" verbose="0">
+    <classes>
+      <class name="testcases.FundTransferTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="invalidAccountTransfer"/>
+          <include name="insufficientBalanceTransfer"/>
+        </methods>
+      </class> <!-- testcases.FundTransferTest -->
+      <class name="testcases.WithdrawTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="validWithdraw"/>
+          <include name="insufficientBalance"/>
+        </methods>
+      </class> <!-- testcases.WithdrawTest -->
+      <class name="testcases.DepositTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="invalidAccountDeposit"/>
+          <include name="validDeposit"/>
+        </methods>
+      </class> <!-- testcases.DepositTest -->
+      <class name="testcases.LoginTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="blankLogin"/>
+        </methods>
+      </class> <!-- testcases.LoginTest -->
+    </classes>
+  </test> <!-- Guru99 Tests(failed) -->
+</suite> <!-- Failed suite [Guru99 Suite] -->

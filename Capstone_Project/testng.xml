@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Guru99 Suite">
+
+    <listeners>
+
+        <listener
+        class-name=
+        "listeners.ListenerClass"/>
+
+        <listener
+        class-name=
+        "listeners.ExtentListener"/>
+
+    </listeners>
+
+    <test name="Guru99 Tests">
+
+        <classes>
+
+            <class name=
+            "testcases.LoginTest"/>
+
+            <class name=
+            "testcases.CustomerTest"/>
+
+            <class name=
+            "testcases.AccountTest"/>
+
+            <class name=
+            "testcases.DepositTest"/>
+
+            <class name=
+            "testcases.WithdrawTest"/>
+
+            <class name=
+            "testcases.FundTransferTest"/>
+            
+            <class name=
+            "testcases.BankingFlowTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>

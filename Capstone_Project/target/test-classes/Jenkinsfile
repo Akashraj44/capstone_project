@@ -1,0 +1,61 @@
+pipeline {
+agent any
+tools {
+    maven 'Maven3'
+    jdk 'JDK'
+}
+
+stages {
+
+    stage('Checkout') {
+        steps {
+            git branch: 'master',
+                url: 'https://github.com/Akashraj44/WIPRO_PROJECT.git'
+        }
+    }
+
+    stage('Clean') {
+        steps {
+            dir('Capstone_Project') {
+                bat 'mvn clean'
+            }
+        }
+    }
+
+    stage('Compile') {
+        steps {
+            dir('Capstone_Project') {
+                bat 'mvn compile'
+            }
+        }
+    }
+
+    stage('Test') {
+        steps {
+           dir('Capstone_Project') {
+                bat 'mvn test'
+            }
+        }
+    }
+
+    stage('Package') {
+        steps {
+            dir('Capstone_Project') {
+                bat 'mvn package'
+            }
+        }
+    }
+}
+
+    }
+
+    success {
+        echo 'Guru99 Framework Build Successful'
+    }
+
+    failure {
+        echo 'Guru99 Framework Build Failed'
+    }
+}
+}
+
