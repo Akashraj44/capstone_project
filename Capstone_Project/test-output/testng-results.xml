@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-08T13:16:48 IST" name="Default suite" finished-at="2026-06-08T13:17:21 IST" duration-ms="32973">
+  <suite started-at="2026-06-08T13:59:09 IST" name="Default suite" finished-at="2026-06-08T13:59:43 IST" duration-ms="34217">
     <groups>
     </groups>
-    <test started-at="2026-06-08T13:16:48 IST" name="Default test" finished-at="2026-06-08T13:17:21 IST" duration-ms="32973">
-      <class name="testcases.CustomerTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.CustomerTest@c730b35]" started-at="2026-06-08T13:16:48 IST" name="setup" finished-at="2026-06-08T13:17:01 IST" duration-ms="12302" status="PASS">
+    <test started-at="2026-06-08T13:59:09 IST" name="Default test" finished-at="2026-06-08T13:59:43 IST" duration-ms="34217">
+      <class name="testcases.AccountTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.AccountTest@c730b35]" started-at="2026-06-08T13:59:09 IST" name="setup" finished-at="2026-06-08T13:59:24 IST" duration-ms="14196" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="addCustomer()[pri:0, instance:testcases.CustomerTest@c730b35]" started-at="2026-06-08T13:17:01 IST" name="addCustomer" finished-at="2026-06-08T13:17:20 IST" duration-ms="18838" status="PASS">
+        <test-method signature="openAccount()[pri:0, instance:testcases.AccountTest@c730b35]" started-at="2026-06-08T13:59:24 IST" name="openAccount" finished-at="2026-06-08T13:59:43 IST" duration-ms="18945" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addCustomer -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.CustomerTest@c730b35]" started-at="2026-06-08T13:17:20 IST" name="tearDown" finished-at="2026-06-08T13:17:21 IST" duration-ms="1516" status="PASS">
+        </test-method> <!-- openAccount -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.AccountTest@c730b35]" started-at="2026-06-08T13:59:43 IST" name="tearDown" finished-at="2026-06-08T13:59:43 IST" duration-ms="751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testcases.CustomerTest -->
+      </class> <!-- testcases.AccountTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

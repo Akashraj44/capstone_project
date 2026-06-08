@@ -13,8 +13,10 @@ testcases\LoginTest.class
 utilities\ExcelUtils.class
 testcases\WithdrawTest.class
 listeners\ListenerClass.class
+testcases\LogoutTest.class
 testcases\CustomerTest.class
 utilities\ConfigReader.class
+pages\LogoutPage.class
 reports\ExtentManager.class
 pages\AccountPage.class
 testcases\BankingFlowTest.class
