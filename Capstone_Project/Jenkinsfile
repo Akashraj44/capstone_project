@@ -1,61 +1,83 @@
 pipeline {
-agent any
-tools {
-    maven 'Maven3'
-    jdk 'JDK'
-}
 
-stages {
+    agent any
 
-    stage('Checkout') {
-        steps {
-            git branch: 'main',
-                url: 'https://github.com/Akashraj44/capstone_project.git'
-        }
+    tools {
+        maven 'Maven3'
+        jdk 'JDK'
     }
 
-    stage('Clean') {
-        steps {
-            dir('Capstone_Project') {
-                bat 'mvn clean'
+    stages {
+
+        stage('Checkout') {
+
+            steps {
+
+                git branch: 'main',
+                    url: 'https://github.com/Akashraj44/capstone_project.git'
+            }
+        }
+
+        stage('Clean') {
+
+            steps {
+
+                dir('Capstone_Project') {
+
+                    bat 'mvn clean'
+                }
+            }
+        }
+
+        stage('Compile') {
+
+            steps {
+
+                dir('Capstone_Project') {
+
+                    bat 'mvn compile'
+                }
+            }
+        }
+
+        stage('Test') {
+
+            steps {
+
+                dir('Capstone_Project') {
+
+                    bat 'mvn test'
+                }
+            }
+        }
+
+        stage('Package') {
+
+            steps {
+
+                dir('Capstone_Project') {
+
+                    bat 'mvn package'
+                }
             }
         }
     }
 
-    stage('Compile') {
-        steps {
-            dir('Capstone_Project') {
-                bat 'mvn compile'
-            }
-        }
-    }
+    post {
 
-    stage('Test') {
-        steps {
-           dir('Capstone_Project') {
-                bat 'mvn test'
-            }
-        }
-    }
+        success {
 
-    stage('Package') {
-        steps {
-            dir('Capstone_Project') {
-                bat 'mvn package'
-            }
+            echo 'Guru99 Framework Build Successful'
+        }
+
+        failure {
+
+            echo 'Guru99 Framework Build Failed'
+        }
+
+        always {
+
+            echo 'Pipeline Execution Completed'
         }
     }
 }
-
-    }
-
-    success {
-        echo 'Guru99 Framework Build Successful'
-    }
-
-    failure {
-        echo 'Guru99 Framework Build Failed'
-    }
-}
-}
-
