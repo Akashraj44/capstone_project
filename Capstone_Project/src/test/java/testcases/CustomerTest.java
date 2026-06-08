@@ -28,6 +28,7 @@ public class CustomerTest extends BaseTest {
         cp.enterEmail("akash" + random + "@gmail.com");
         cp.enterPassword("abc123");
         cp.clickSubmit();
+        Thread.sleep(3000);
 
         Assert.assertTrue(driver.getPageSource()
                 .contains("Customer Registered Successfully"));
