@@ -22,7 +22,7 @@ public class AccountTest extends BaseTest {
         ap.clickSubmit();
         System.out.println(driver.getPageSource());
 
-      //  Assert.assertTrue(driver.getPageSource().contains("Account Generated Successfully"));
+        Assert.assertTrue(driver.getPageSource().contains("Account Generated Successfully"));
 
         System.out.println("Account Created Successfully");
     }

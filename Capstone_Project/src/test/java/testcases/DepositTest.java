@@ -28,7 +28,7 @@ public class DepositTest extends BaseTest {
         }
        
 
-     //   Assert.assertTrue(driver.getPageSource().contains("Transaction details of Deposit"));
+       Assert.assertTrue(driver.getPageSource().contains("Transaction details of Deposit"));
 
         System.out.println("Deposit Successful");
     }

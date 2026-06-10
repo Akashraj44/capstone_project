@@ -48,7 +48,7 @@ public class LoginTest extends BaseTest {
 
         String msg = alert.getText();
 
-       //  Assert.assertEquals(msg,"User or Password is not valid");
+         Assert.assertEquals(msg,"User or Password is not valid");
 
         alert.accept();
         System.out.println("Blank Login Passed");
