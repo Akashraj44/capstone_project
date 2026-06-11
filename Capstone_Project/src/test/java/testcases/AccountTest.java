@@ -20,7 +20,7 @@ public class AccountTest extends BaseTest {
         ap.selectAccountType("Savings");
         ap.enterInitialDeposit("5000");
         ap.clickSubmit();
-        System.out.println(driver.getPageSource());
+        //System.out.println(driver.getPageSource());
 
         Assert.assertTrue(driver.getPageSource().contains("Account Generated Successfully"));
 
