@@ -63,7 +63,27 @@ pipeline {
         }
     }
 
-    post {
+    stage('Docker Build') {
+
+    steps {
+
+        dir('Capstone_Project') {
+
+            bat 'docker build -t guru99-framework .'
+        }
+    }
+}
+
+stage('Docker Run') {
+
+    steps {
+
+        dir('Capstone_Project') {
+
+            bat 'docker run --rm guru99-framework'
+        }
+    }
+}
 
         success {
 
