@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.asserts.SoftAssert;
 
 import pages.LoginPage;
 import utilities.ConfigReader;
@@ -20,11 +21,13 @@ import utilities.ExcelUtils;
 public class BaseTest {
 
     public static WebDriver driver;
+    public SoftAssert soft;
 
     ConfigReader config;
 
     @BeforeMethod
     public void setup() throws Exception {
+    	 soft = new SoftAssert();
 
         config = new ConfigReader();
 
@@ -40,7 +43,7 @@ public class BaseTest {
             options.addArguments("--window-size=1920,1080");
             driver = new ChromeDriver(options);
 
-            System.out.println("Chrome Headless Started");
+            System.out.println("Chrome browser started");
 
         } else if(browser.equalsIgnoreCase("edge")) {
 

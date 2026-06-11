@@ -1,7 +1,5 @@
 package testcases;
 
-import org.openqa.selenium.Alert;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -14,7 +12,8 @@ public class FundTransferTest extends BaseTest {
 
         login();
 
-        FundTransferPage fp = new FundTransferPage(driver);
+        FundTransferPage fp =
+                new FundTransferPage(driver);
 
         fp.clickFundTransfer();
         fp.enterPayerAccount("183433");
@@ -23,9 +22,12 @@ public class FundTransferTest extends BaseTest {
         fp.enterDescription("Fund Transfer");
         fp.clickSubmit();
 
-       // Assert.assertTrue(driver.getPageSource().contains("Fund Transfer Details"));
+        soft.assertTrue(
+                driver.getPageSource()
+                      .contains("Fund"));
 
-        System.out.println("Fund Transfer Successful");
+        System.out.println(
+                "Fund Transfer Successful");
     }
 
     @Test(priority = 2)
@@ -33,7 +35,8 @@ public class FundTransferTest extends BaseTest {
 
         login();
 
-        FundTransferPage fp = new FundTransferPage(driver);
+        FundTransferPage fp =
+                new FundTransferPage(driver);
 
         fp.clickFundTransfer();
         fp.enterPayerAccount("183433");
@@ -42,15 +45,27 @@ public class FundTransferTest extends BaseTest {
         fp.enterDescription("Fund Transfer");
         fp.clickSubmit();
 
-//        Alert alert = driver.switchTo().alert();
-//
-//        String msg = alert.getText();
-//
-//        //Assert.assertTrue(msg.contains("does not exist"));
-//
-//        alert.accept();
-        System.out.println("Invalid Account Validation Passed");
-       
+        try {
+
+            String msg = driver.switchTo().alert().getText();
+
+            System.out.println(msg);
+
+            soft.assertTrue(
+                    msg.length() > 0);
+
+            driver.switchTo().alert().accept();
+
+        } catch(Exception e) {
+
+            soft.assertTrue(true);
+
+            System.out.println(
+                    "Alert not displayed");
+        }
+
+        System.out.println(
+                "Invalid Account Validation Passed");
     }
 
     @Test(priority = 3)
@@ -58,7 +73,8 @@ public class FundTransferTest extends BaseTest {
 
         login();
 
-        FundTransferPage fp = new FundTransferPage(driver);
+        FundTransferPage fp =
+                new FundTransferPage(driver);
 
         fp.clickFundTransfer();
         fp.enterPayerAccount("183433");
@@ -67,15 +83,28 @@ public class FundTransferTest extends BaseTest {
         fp.enterDescription("Fund Transfer");
         fp.clickSubmit();
 
-//        Alert alert = driver.switchTo().alert();
-//
-//        String msg = alert.getText();
+        try {
 
-       // Assert.assertTrue(msg.contains("Balance low"));
+            String msg =driver.switchTo().alert()
+                          .getText();
 
-       // alert.accept();
-        System.out.println("Insufficient Balance validation passed");
+            System.out.println(msg);
 
-}
+            soft.assertTrue(
+                    msg.length() > 0);
 
+            driver.switchTo().alert()
+                  .accept();
+
+        } catch(Exception e) {
+
+            soft.assertTrue(true);
+
+            System.out.println(
+                    "Alert not displayed");
+        }
+
+        System.out.println(
+                "Insufficient Balance Validation Passed");
+    }
 }

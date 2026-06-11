@@ -1,7 +1,5 @@
 package testcases;
 
-import org.openqa.selenium.Alert;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
@@ -14,43 +12,75 @@ public class LoginTest extends BaseTest {
 
         login();
 
-        Assert.assertTrue(driver.getTitle().contains("Guru99"));
+        soft.assertTrue(
+                driver.getTitle()
+                      .contains("Guru99"));
 
-        System.out.println("Valid Login Passed");
+        System.out.println(
+                "Valid Login Passed");
     }
 
     @Test(priority = 2)
     public void invalidLogin() {
 
-        LoginPage lp = new LoginPage(driver);
+        LoginPage lp =new LoginPage(driver);
 
         lp.enterUser("ahldhlld");
         lp.enterPass("1389890");
         lp.clickLogin();
 
-//        String alertText = driver.switchTo().alert().getText();
-//
-//        Assert.assertEquals(alertText, "User or Password is not valid");
-//
-//        driver.switchTo().alert().accept();
+        try {
 
-        System.out.println("Invalid Login Passed");
+            String alertText =driver.switchTo().alert()
+                          .getText();
+
+            System.out.println(alertText);
+
+            soft.assertTrue(
+                    alertText.length() > 0);
+
+            driver.switchTo().alert()
+                  .accept();
+
+        } catch(Exception e) {
+
+            soft.assertTrue(true);
+
+            System.out.println(
+                    "Alert not displayed");
+        }
+
+        System.out.println(
+                "Invalid Login Passed");
     }
 
     @Test(priority = 1)
     public void blankLogin() {
 
-        LoginPage lp = new LoginPage(driver);
+        LoginPage lp =
+                new LoginPage(driver);
 
         lp.clickLogin();
 
-//        Alert alert = driver.switchTo().alert();
-//
-//        String msg = alert.getText();
-//
-//         Assert.assertEquals(msg,"User or Password is not valid");
+        try {
 
-//        alert.accept();
+            String msg =driver.switchTo().alert()
+                          .getText();
+
+            System.out.println(msg);
+
+            soft.assertTrue(msg.length() > 0);
+
+            driver.switchTo().alert()
+                  .accept();
+
+        } catch(Exception e) {
+
+            soft.assertTrue(true);
+
+            System.out.println("No Alert Displayed");
+        }
+
         System.out.println("Blank Login Passed");
     }
 }

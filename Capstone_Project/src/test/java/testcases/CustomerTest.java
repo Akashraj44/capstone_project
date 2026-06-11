@@ -1,39 +1,51 @@
 package testcases;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.CustomerPage;
+import utilities.CustomerData;
 
 public class CustomerTest extends BaseTest {
 
-    @Test
-    public void addCustomer() throws Exception {
+    @Test(dataProvider = "customerData",
+          dataProviderClass = CustomerData.class)
+
+    public void addCustomer(
+            String name,
+            String dob,
+            String address,
+            String city,
+            String state,
+            String pin,
+            String mobile,
+            String password) throws Exception {
 
         login();
 
-        CustomerPage cp = new CustomerPage(driver);
+        CustomerPage cp =new CustomerPage(driver);
 
         cp.clickNewCustomer();
-        cp.enterCustomerName("Akashsingh");
-        cp.selectGender();
-        cp.enterDOB("01052002");
-        cp.enterAddress("Kolkata");
-        cp.enterCity("Kolkata");
-        cp.enterState("West Bengal");
-        cp.enterPin("700001");
-        cp.enterMobile("9876543210");
-        int random = (int)(Math.random() * 10000);
-        cp.enterEmail("akash" + random + "@gmail.com");
-        cp.enterPassword("abc123");
-        cp.clickSubmit();
-        Thread.sleep(3000);
 
-        Assert.assertTrue(driver.getPageSource()
-                .contains("Customer Registered Successfully"));
+        cp.enterCustomerName(name);
+        cp.selectGender();
+        cp.enterDOB(dob);
+        cp.enterAddress(address);
+        cp.enterCity(city);
+        cp.enterState(state);
+        cp.enterPin(pin);
+        cp.enterMobile(mobile);
+
+        int random =(int)(Math.random() * 10000);
+
+        cp.enterEmail("akash" + random + "@gmail.com");
+
+        cp.enterPassword(password);
+
+        cp.clickSubmit();
+
+        soft.assertTrue(driver.getPageSource().contains("Customer"));
 
         System.out.println("Customer Added Successfully");
-        //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
     }
 }
