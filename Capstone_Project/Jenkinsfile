@@ -1,5 +1,6 @@
 pipeline {
-	
+
+```
 agent any
 
 tools {
@@ -18,43 +19,54 @@ stages {
 
     stage('Clean') {
         steps {
-            bat 'mvn clean'
+            dir('Capstone_Project') {
+                bat 'mvn clean'
+            }
         }
     }
 
     stage('Compile') {
         steps {
-            bat 'mvn compile'
+            dir('Capstone_Project') {
+                bat 'mvn compile'
+            }
         }
     }
 
     stage('Test') {
         steps {
-            bat 'mvn test'
+            dir('Capstone_Project') {
+                bat 'mvn test'
+            }
         }
     }
 
     stage('Package') {
         steps {
-            bat 'mvn package'
+            dir('Capstone_Project') {
+                bat 'mvn package'
+            }
         }
     }
 
     stage('Docker Build') {
         steps {
-            bat 'docker build -t guru99-framework .'
+            dir('Capstone_Project') {
+                bat 'docker build -t guru99-framework .'
+            }
         }
     }
 
     stage('Docker Run') {
         steps {
-            bat 'docker run --rm guru99-framework'
+            dir('Capstone_Project') {
+                bat 'docker run --rm guru99-framework'
+            }
         }
     }
 }
 
 post {
-
     success {
         echo 'Guru99 Framework Build Successful'
     }
@@ -67,5 +79,6 @@ post {
         echo 'Pipeline Execution Completed'
     }
 }
+```
 
 }
