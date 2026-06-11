@@ -7,10 +7,25 @@
   </listeners>
   <test thread-count="5" name="Guru99 Tests(failed)">
     <classes>
+      <class name="testcases.AccountTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="openAccount"/>
+        </methods>
+      </class> <!-- testcases.AccountTest -->
+      <class name="testcases.LoginTest">
+        <methods>
+          <include name="setup"/>
+          <include name="invalidLogin"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcases.LoginTest -->
       <class name="testcases.WithdrawTest">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="validWithdraw"/>
           <include name="insufficientBalance"/>
         </methods>
       </class> <!-- testcases.WithdrawTest -->

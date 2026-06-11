@@ -46,8 +46,7 @@ public class FundTransferTest extends BaseTest {
 
         String msg = alert.getText();
 
-        Assert.assertTrue(
-        msg.contains("does not exist"));
+        Assert.assertTrue(msg.contains("does not exist"));
 
         alert.accept();
         System.out.println("Invalid Account Validation Passed");

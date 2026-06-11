@@ -4,9 +4,11 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -30,35 +32,48 @@ public class BaseTest {
 
         if(browser.equalsIgnoreCase("chrome")) {
 
-            driver = new ChromeDriver();
-            System.out.println("opened chrome successfully ");
+            ChromeOptions options = new ChromeOptions();
+
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--window-size=1920,1080");
+            driver = new ChromeDriver(options);
+
+            System.out.println("Chrome Headless Started");
 
         } else if(browser.equalsIgnoreCase("edge")) {
 
-            driver = new EdgeDriver();
-            System.out.println("opened edge successfully ");
+            EdgeOptions options = new EdgeOptions();
+
+            options.addArguments("--headless=new");
+
+            driver = new EdgeDriver(options);
+
+            System.out.println("Edge Headless Started");
 
         } else if(browser.equalsIgnoreCase("firefox")) {
 
-            driver = new FirefoxDriver();
-            System.out.println("opened firefox successfully ");
+            FirefoxOptions options =new FirefoxOptions();
+
+            options.addArguments("--headless");
+
+            driver = new FirefoxDriver(options);
+
+            System.out.println("Firefox Headless Started");
         }
 
-        driver.manage().window().maximize();
-
-        driver.manage().timeouts()
-              .implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.get(config.getUrl());
     }
 
-   
     public void login() throws Exception {
 
-    	String user = ExcelUtils.getData("Sheet1",1,0);
-    	String pass = ExcelUtils.getData("Sheet1",1,1);
+        String user =ExcelUtils.getData("Sheet1", 1, 0);
+        String pass =ExcelUtils.getData("Sheet1", 1, 1);
 
-        LoginPage lp = new LoginPage(driver);
+        LoginPage lp =new LoginPage(driver);
 
         lp.enterUser(user);
         lp.enterPass(pass);
@@ -68,6 +83,9 @@ public class BaseTest {
     @AfterMethod
     public void tearDown() {
 
-        driver.quit();
+        if(driver != null) {
+
+            driver.quit();
+        }
     }
 }

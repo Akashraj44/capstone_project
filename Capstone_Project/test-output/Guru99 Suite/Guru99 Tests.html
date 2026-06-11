@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Guru99 Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>13/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jun 08 00:20:23 IST 2026</td>
+<td>Started on:</td><td>Thu Jun 11 15:38:18 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>263 seconds (263454 ms)</td>
+<tr><td>Total time:</td><td>235 seconds (235085 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,56 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testcases.WithdrawTest.validWithdraw()'><b>validWithdraw</b><br>Test class: testcases.WithdrawTest</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at testcases.WithdrawTest.validWithdraw(WithdrawTest.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1907758892", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1907758892'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at testcases.WithdrawTest.validWithdraw(WithdrawTest.java:24)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>12</td>
+<td>testcases.WithdrawTest@6c7a164b</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,70 +126,40 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='testcases.CustomerTest.addCustomer()'><b>addCustomer</b><br>Test class: testcases.CustomerTest</td>
+<td></td>
+<td>20</td>
+<td>testcases.CustomerTest@34129c78</td></tr>
+<tr>
+<td title='testcases.DepositTest.validDeposit()'><b>validDeposit</b><br>Test class: testcases.DepositTest</td>
+<td></td>
+<td>16</td>
+<td>testcases.DepositTest@222a59e6</td></tr>
+<tr>
+<td title='testcases.LoginTest.validLogin()'><b>validLogin</b><br>Test class: testcases.LoginTest</td>
+<td></td>
+<td>9</td>
+<td>testcases.LoginTest@2235eaab</td></tr>
+<tr>
 <td title='testcases.LoginTest.blankLogin()'><b>blankLogin</b><br>Test class: testcases.LoginTest</td>
 <td></td>
-<td>3</td>
+<td>6</td>
 <td>testcases.LoginTest@2235eaab</td></tr>
 <tr>
 <td title='testcases.AccountTest.openAccount()'><b>openAccount</b><br>Test class: testcases.AccountTest</td>
 <td></td>
-<td>7</td>
+<td>17</td>
 <td>testcases.AccountTest@7d61eb55</td></tr>
 <tr>
-<td title='testcases.LogoutTest.validLogout()'><b>validLogout</b><br>Test class: testcases.LogoutTest</td>
-<td></td>
-<td>8</td>
-<td>testcases.LogoutTest@3e62d773</td></tr>
-<tr>
-<td title='testcases.DepositTest.validDeposit()'><b>validDeposit</b><br>Test class: testcases.DepositTest</td>
+<td title='testcases.DepositTest.invalidAccountDeposit()'><b>invalidAccountDeposit</b><br>Test class: testcases.DepositTest</td>
 <td></td>
 <td>8</td>
 <td>testcases.DepositTest@222a59e6</td></tr>
 <tr>
 <td title='testcases.LoginTest.invalidLogin()'><b>invalidLogin</b><br>Test class: testcases.LoginTest</td>
 <td></td>
-<td>5</td>
+<td>1</td>
 <td>testcases.LoginTest@2235eaab</td></tr>
-<tr>
-<td title='testcases.LoginTest.validLogin()'><b>validLogin</b><br>Test class: testcases.LoginTest</td>
-<td></td>
-<td>5</td>
-<td>testcases.LoginTest@2235eaab</td></tr>
-<tr>
-<td title='testcases.CustomerTest.addCustomer()'><b>addCustomer</b><br>Test class: testcases.CustomerTest</td>
-<td></td>
-<td>10</td>
-<td>testcases.CustomerTest@34129c78</td></tr>
-<tr>
-<td title='testcases.FundTransferTest.insufficientBalanceTransfer()'><b>insufficientBalanceTransfer</b><br>Test class: testcases.FundTransferTest</td>
-<td></td>
-<td>7</td>
-<td>testcases.FundTransferTest@4c2bb6e0</td></tr>
-<tr>
-<td title='testcases.FundTransferTest.invalidAccountTransfer()'><b>invalidAccountTransfer</b><br>Test class: testcases.FundTransferTest</td>
-<td></td>
-<td>9</td>
-<td>testcases.FundTransferTest@4c2bb6e0</td></tr>
-<tr>
-<td title='testcases.WithdrawTest.insufficientBalance()'><b>insufficientBalance</b><br>Test class: testcases.WithdrawTest</td>
-<td></td>
-<td>11</td>
-<td>testcases.WithdrawTest@6c7a164b</td></tr>
-<tr>
-<td title='testcases.FundTransferTest.validFundTransfer()'><b>validFundTransfer</b><br>Test class: testcases.FundTransferTest</td>
-<td></td>
-<td>6</td>
-<td>testcases.FundTransferTest@4c2bb6e0</td></tr>
-<tr>
-<td title='testcases.WithdrawTest.validWithdraw()'><b>validWithdraw</b><br>Test class: testcases.WithdrawTest</td>
-<td></td>
-<td>10</td>
-<td>testcases.WithdrawTest@6c7a164b</td></tr>
-<tr>
-<td title='testcases.DepositTest.invalidAccountDeposit()'><b>invalidAccountDeposit</b><br>Test class: testcases.DepositTest</td>
-<td></td>
-<td>11</td>
-<td>testcases.DepositTest@222a59e6</td></tr>
 </table><p>
 </body>
 </html>
